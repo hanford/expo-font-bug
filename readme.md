@@ -18,6 +18,9 @@ This seems to happen with any `.ttf` font I try...
 
 <img src="https://github.com/hanford/expo-font-bug/blob/main/iphone.gif" width="320" />
 
+<hr>
+
+A few things to note:
 - We get a MD5 mismatch on the fonts.
 - the URL includes `/assets/assets/..` which looks maybe incorrect?
 - Font URL seems malformed (two `?` in the query params):

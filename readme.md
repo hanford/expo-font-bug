@@ -16,7 +16,7 @@ at [native code]:null in invokeCallbackAndReturnFlushedQueue
 
 This seems to happen with any `.ttf` font I try...
 
-![preview](https://github.com/hanford/expo-font-bug/blob/main/iphone.gif)
+<img src="https://github.com/hanford/expo-font-bug/blob/main/iphone.gif" width="320" />
 
 - We get a MD5 mismatch on the fonts.
 - the URL includes `/assets/assets/..` which looks maybe incorrect?

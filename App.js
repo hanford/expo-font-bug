@@ -4,28 +4,34 @@ import * as Font from "expo-font";
 
 const fonts = {
   babysweet: require("./assets/fonts/babysweet.ttf"),
+  // Any string can be used as the fontFamily name. Here we use an object to provide more control
+  "Montserrat-SemiBold": {
+    uri: require("./assets/fonts/Montserrat-SemiBold.ttf"),
+    display: Font.FontDisplay.FALLBACK,
+  },
 };
 
 export default class App extends Component {
   state = {
-    loaded: false,
+    fontsLoaded: false,
+  };
+
+  loadFonts = async () => {
+    await Font.loadAsync(fonts);
+
+    this.setState({ fontsLoaded: true });
   };
 
   componentDidMount() {
-    this._loadAssetsAsync();
+    this.loadFonts();
   }
-
-  _loadAssetsAsync = async () => {
-    await Font.loadAsync(fonts);
-
-    this.setState({ loaded: true });
-  };
 
   render() {
     if (!this.state.loaded) {
       return (
         <View style={[styles.container, { flexDirection: "row" }]}>
           <ActivityIndicator />
+
           <Text style={{ marginLeft: 8, color: "black" }}>
             Loading fonts...
           </Text>
@@ -35,8 +41,12 @@ export default class App extends Component {
 
     return (
       <View style={styles.container}>
+        <Text style={{ fontFamily: "Montserrat-SemiBold", color: "black" }}>
+          Montserrat font
+        </Text>
+
         <Text style={{ fontFamily: "babysweet", color: "black" }}>
-          SF font, yo!
+          Babysweet font
         </Text>
       </View>
     );

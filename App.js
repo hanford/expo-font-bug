@@ -27,7 +27,7 @@ export default class App extends Component {
   }
 
   render() {
-    if (!this.state.loaded) {
+    if (!this.state.fontsLoaded) {
       return (
         <View style={[styles.container, { flexDirection: "row" }]}>
           <ActivityIndicator />
